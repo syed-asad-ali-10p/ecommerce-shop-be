@@ -7,7 +7,7 @@ const validator = require('../middleware/validator')
 const router = express.Router()
 
 // GET all products
-router.get('/', productController.getAllProducts)
+router.get('/', checkAuth, productController.getAllProducts)
 
 // GET product by name
 router.get('/:name', checkAuth, productController.getProductByName)
