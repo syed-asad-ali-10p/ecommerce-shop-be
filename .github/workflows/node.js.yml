@@ -30,7 +30,7 @@ jobs:
     - name: Add remote origin
       if: github.ref == 'refs/heads/main' && job.status == 'success'
       run: |
-        git remote add heroku https://heroku:${{ secrets.HEROKU_ESHOP_API_KEY }}@git.heroku.com/${{ secrets.HEROKU_ESHOP_APP_NAME }}.git
+        git remote add heroku https://heroku:${{ secrets.HEROKU_API_SECRET }}@git.heroku.com/${{ secrets.HEROKU_ESHOP_APP_NAME }}.git
     - name: Deploy to Heroku
       run: |
         git push heroku main
