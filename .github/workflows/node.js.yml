@@ -33,5 +33,6 @@ jobs:
         git remote add heroku https://heroku:${{ secrets.HEROKU_API_SECRET }}@git.heroku.com/${{ secrets.HEROKU_ESHOP_APP_NAME }}.git
     - name: Deploy to Heroku
       run: |
+        git config pull.ff true
         git pull heroku main
         git push heroku main
